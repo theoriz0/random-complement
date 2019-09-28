@@ -2,7 +2,11 @@
 Get a random words of complement/insult. Course work @ Frontend Masters.
 
 ## How to use
- ```node server.dist.js```
+ ```shell
+ node server.dist.js
+ ```
 
 ## Use parcel to build
-```parcel build index.html```
+```shell
+parcel build index.html
+```

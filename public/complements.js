@@ -30,7 +30,7 @@ document
       });
   });
 
-const { styler, listen, value, tween } = window.popmotion;
+const { styler, listen, value, tween } = popmotion;
 
 const buttons = document.querySelectorAll('.buttons>button');
 

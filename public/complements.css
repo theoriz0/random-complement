@@ -1,0 +1,65 @@
+.main-container {
+    display: flex;
+    margin: auto 0;
+    padding: 10%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.brand {
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    color: blue;
+    display: flex;
+    justify-content: center;
+}
+
+.brand h1 {
+    padding-left: 80px;
+    font-size: 42px;
+}
+
+.brand sub {
+    color: firebrick;
+    margin-top: 3%;
+}
+
+body {
+    background: #0074d9;
+    background: linear-gradient(103deg,darkblue,#ffffff 55%,firebrick);
+    min-height: 100vh;
+    margin: 0;
+}
+
+.request-complement, .request-insult {
+    width: 12em;
+    min-height: 3em;
+    line-height: 2;
+    border-radius: 4px;
+    font-size: 14px;
+    border: none;
+    margin: 0 24px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #f1f1f1;
+}
+
+.request-complement {
+    background-color: darkblue;
+}
+
+.request-insult {
+    background-color: firebrick;
+}
+
+.words {
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-size: 24px;
+    display: block;
+    background-color: white;
+    padding: 10px 30px;
+    min-width: 500px;
+    text-align: center;
+    box-shadow: inset 1px 1px 3px 0px #333, 
+                inset -1px -1px 3px 0px #333;
+    margin-bottom: 64px;
+}

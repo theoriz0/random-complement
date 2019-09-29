@@ -30,29 +30,27 @@ document
       });
   });
 
-const { styler, spring, listen, pointer, value } = popmotion;
+const { styler, listen, value, tween } = window.popmotion;
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.buttons>button');
 
 buttons.forEach(function (btn) {
-  const divStyler = styler(btn);
-  const btnXY = value({ x: 0, y: 0 }, divStyler.set);
-  listen(btn, 'mousedown touchstart')
-    .start((e) => {
+  const btnStyler = styler(btn);
+
+  const btnBorder = value({
+    borderColor: '',
+    borderWidth: 0
+  }, ({ borderColor, borderWidth }) => btnStyler.set({
+    boxShadow: `0 0 0 ${borderWidth}px ${borderColor}`
+  }));
+
+  listen(btn, 'mousedown touchstart').start((e) => {
       e.preventDefault();
-      pointer(btnXY.get()).start(btnXY);
-    });
-  
-  listen(document, 'mouseup touchend')
-    .start(() => {
-      spring({
-        from: btnXY.get(),
-        velocity: btnXY.getVelocity(),
-        to: { x: 0, y: 0 },
-        stiffness: 200,
-        // mass: 1,
-        // damping: 10
-      }).start(btnXY);
+
+      tween({
+        from: { borderWidth: 0, borderColor: 'rgb(20, 215, 144, 1)' },
+        to: { borderWidth: 30, borderColor: 'rgb(20, 215, 144, 0)' }
+      }).start(btnBorder);
     });
   })
 
